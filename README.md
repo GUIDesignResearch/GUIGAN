@@ -100,4 +100,6 @@ We propose three novel metrics, i.e., design aesthetics, color harmony, and stru
 
 ![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/T4.jpg)
 
+As shown in Table IV, the generated GUI designs from our model outperforms that of FaceOff significantly with 3.11, 3.30, and 3.21 which are 31.22%, 25.00%, and 34.87% increase in overall aesthetics, color harmony and structure. We also carry out the Mann-Whitney U test on three metrics and the results suggests that our GUIGAN can contribute significantly to the GUI design in all three metrics with p−value < 0.01 or p−value < 0.05 except the aesthetics and color harmony metrics in the shopping category. 
+
 
