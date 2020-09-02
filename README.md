@@ -96,6 +96,8 @@ There are still some bad designs. Some subtrees are difficult to fit into the ge
 
 ## HUMAN EVALUATION
 
+We propose three novel metrics, i.e., design aesthetics, color harmony, and structure rationality for five participants(with Android development experience about GUI implementation and some GUI design) to rate the quality of the GUI design from three aspects by considering the characteristics of the mobile GUIs. For each metric, the participants will give a score ranging from 1 to 5 with 1 representing the least satisfactoriness while 5 as the highest satisfactoriness. The participants do not know which GUI design is from which method and all of them will evaluate the GUI design individually without any discussion.
+
 ![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/T4.jpg)
 
 
