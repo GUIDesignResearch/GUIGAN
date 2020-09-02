@@ -5,6 +5,9 @@ software in the market, but designing a good GUI which requires much innovation 
 
 To assist designers, we develop a model GUIGAN to automatically generate GUI designs. Different from conventional image generation models based on image pixels, our GUIGAN is to reuse GUI components collected from existing mobile app GUIs for composing a new design which is similar to natural-language generation. Our GUIGAN is based on SeqGAN by modelling the GUI component style compatibility and GUI structure. The evaluation demonstrates that our model significantly outperforms the best of the baseline methods by 30.77% in Frechet Inception distance (FID) and 12.35% in 1-Nearest Neighbor Accuracy (1-NNA). Through a pilot user study, we provide initial evidence of the usefulness of our approach for generating acceptable brand new GUI designs. We formulate our task as generating a new GUI by selecting a list of compatible GUI subtrees.
 
+![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/Fig1_v2.jpg)
+
+An overview of our approach is shown in the figure. First, We collect 12,230 GUI screenshots and their corresponding metainformation from 1,609 Android apps in 27 categories from Google Play and decompose them into 41,813 component subtrees for re-using. Second, we develop a SeqGAN based model. Apart from the default generation and discrimination loss, we model the GUI component style compatibility and GUI layout structure for guiding the training. Therefore, our GUIGAN can generate brand new GUI designs for designers’ inspiration. 
 
 ## Task Establishment
 One GUI design image consists of two types of components i.e., widgets (e.g., button, image, text) and spatial layouts (e.g., linear layout, relative layout). The widgets (leaf nodes) are organized by the layout (intermedia nodes) as the structural tree for one GUI design. We take the subtree of existing GUIs as the basic unit for composing a new GUI design rather than plain pixels. 
@@ -20,26 +23,38 @@ The figure shows an example segmentation of a real GUI screen shot, and each sub
 
 ##  Learning to Generate GUI Designs Using Generative Adversarial Networks
 
-![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/Fig1_v2.jpg)
+![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/Fig3.jpg)
 
-An overview of our approach is shown in the figure. First, We collect 12,230 GUI screenshots and their corresponding metainformation from 1,609 Android apps in 27 categories from Google Play and decompose them into 41,813 component subtrees for re-using. Second, we develop a SeqGAN based model. Apart from the default generation and discrimination loss, we model the GUI component style compatibility and GUI layout structure for guiding the training. Therefore, our GUIGAN can generate brand new GUI designs for designers’ inspiration. 
-
+As shown in the figure, based on subtrees automatically segmented from the original GUIs, we first convert all them into embedding by modeling their style. During the training process, the generator randomly generates a sequence with the given length and the discriminator acts as the environment, in which the reward can be calculated as the loss_g by Monte Carlo tree search (MCTS). We get the homogeneity value of the generated result as loss_c. By measuring the distance between the generated result and the original GUI design, the model captures the structural information with loss_s calculated by the minimum edit distance. By integrating all the loss functions above, the parameters of the generator are updated with the backpropagation algorithm.
 
 ### Style Embedding of Subtree
 
+We adopt a siamese network to model the GUI design with a dual-channel CNN structure. We apply a pair of GUI images (g1,g2) as the input and the goal of the siamese network is to distinguish whether the two images are from the same app. 
+
 ### Modeling Subtree Compatibility
+
+We apply the homogeneity (HOM) to evaluate the aesthetic compatibility of subtrees in the sequence. 
 
 ### Modeling Subtree Structure
 
+We use the structure strings of the subtrees from their meta data to represent their structures. Then we apply the minimum edit distance (MED) to evaluate the structural similarity between the generated samples and the real ones.
+
 ### Multi-Loss Fusion
 
+By adding the trainable noise parameters, we balance the three loss values (the feedback loss from the discriminator, compatibility loss, loss_c, and structure loss, loss_s) to the same scale, and the parameters of the generator can be updated.
 
 ## IMPLEMENTATION
+
+### Dataset Construction
+
 Our data comes from Rico(from **[`Rico dataset`](http://interactionmining.org/rico)**), an open source mobile app dataset for building data-driven design applications. 
 
 Through manual selection, we have collected relatively professional and more suitable apps for this study. The apps with more images, animation or game screens are not selected. In addition, the GUIs with large pop-up areas, Web links waiting, and full screen ads are not selected.
 
 We try to test our model’s capability in capturing that characteristic by preparing separated dataset for five most frequent app categories in Rico dataset, including News & Magazines, Books & Reference, Shopping, Communication, and Travel & Local. 
+
+### Model Implementation
+
 
 
 ## Automated Evaluation
