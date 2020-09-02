@@ -23,9 +23,10 @@ The figure shows an example segmentation of a real GUI screen shot, and each sub
 
 ##  Learning to Generate GUI Designs Using Generative Adversarial Networks
 
+As shown in the figure, based on subtrees automatically segmented from the original GUIs, we first convert all them into embedding by modeling their style. During the training process, the generator randomly generates a sequence with the given length and the discriminator acts as the environment, in which the reward can be calculated as the loss_g by Monte Carlo tree search (MCTS). We get the homogeneity value of the generated result as loss_c. By measuring the distance between the generated result and the original GUI design, the model captures the structural information with loss_s calculated by the minimum edit distance. By integrating all the loss functions above, the parameters of the generator are updated with the backpropagation algorithm.
+
 ![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/Fig3.jpg)
 
-As shown in the figure, based on subtrees automatically segmented from the original GUIs, we first convert all them into embedding by modeling their style. During the training process, the generator randomly generates a sequence with the given length and the discriminator acts as the environment, in which the reward can be calculated as the loss_g by Monte Carlo tree search (MCTS). We get the homogeneity value of the generated result as loss_c. By measuring the distance between the generated result and the original GUI design, the model captures the structural information with loss_s calculated by the minimum edit distance. By integrating all the loss functions above, the parameters of the generator are updated with the backpropagation algorithm.
 
 ### Style Embedding of Subtree
 
