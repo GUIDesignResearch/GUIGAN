@@ -55,15 +55,20 @@ Our data comes from Rico(from **[`Rico dataset`](http://interactionmining.org/ri
 
 Through manual selection, we have collected relatively professional and more suitable apps for this study. The apps with more images, animation or game screens are not selected. In addition, the GUIs with large pop-up areas, Web links waiting, and full screen ads are not selected.
 
+### Model Implementation
+
+The Long Short-Term Memory (LSTM) is used as the generative network. The word vector dimension is selected to be 32 and the hidden layer feature dimension is selected
+to be 32. We use a CNN network that joins the highway architecture (same as the discriminative model in SeqGAN) as the discriminator. The batch size is 32 and the learning rate is set to 0.05. 
+
+The siamese network used for learning GUI design style is basically a two-channel CNNs with shared weights, and there are 4 Conv->Pool layers blocks in the CNN structure.
+
+All networks are implemented on the PyTorch platform and trained on a GPU.
+
+## Automated Evaluation
+
 We try to test our model’s capability in capturing that characteristic by preparing separated dataset for five most frequent app categories in Rico dataset, including News & Magazines, Books & Reference, Shopping, Communication, and Travel & Local. 
 
 ![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/T1.jpg)
-
-### Model Implementation
-
-
-
-## Automated Evaluation
 
 ![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/T2.jpg)
 
