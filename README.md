@@ -7,10 +7,10 @@ To assist designers, we develop a model GUIGAN to automatically generate GUI des
 
 ![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/Fig1_v2.jpg)
 
-An overview of our approach is shown in the figure. First, We collect 12,230 GUI screenshots and their corresponding metainformation from 1,609 Android apps in 27 categories from Google Play and decompose them into 41,813 component subtrees for re-using. Second, we develop a SeqGAN based model. Apart from the default generation and discrimination loss, we model the GUI component style compatibility and GUI layout structure for guiding the training. Therefore, our GUIGAN can generate brand new GUI designs for designers’ inspiration. 
+An overview of our approach is shown in the figure. First, We collect lots of GUI screenshots and their corresponding metainformation from the Android apps from Google Play and decompose them into component subtrees for re-using. Second, we develop a SeqGAN based model. Apart from the default generation and discrimination loss, we model the GUI component style compatibility and GUI layout structure for guiding the training. Therefore, our GUIGAN can generate sequences for reconstructing brand new GUI designs for designers’ inspiration. 
 
-## Task Establishment
-One GUI design image consists of two types of components i.e., widgets (e.g., button, image, text) and spatial layouts (e.g., linear layout, relative layout). The widgets (leaf nodes) are organized by the layout (intermedia nodes) as the structural tree for one GUI design. We take the subtree of existing GUIs as the basic unit for composing a new GUI design rather than plain pixels. 
+## Details
+One GUI design image consists of two types of components i.e., widgets and spatial layouts. The widgets are organized by the layout as the structural tree for one GUI design. We take the subtree of existing GUIs as the basic unit for composing a new GUI design rather than plain pixels. 
 
 We cut these candidate subtrees from the original screenshot according to certain rules. Given one GUI design with detailed component information, we cut out all the first-level subtrees from the original DOM tree . If the width of a subtree exceeds 90% of the GUI width, we continue to cut it to the next level, otherwise we stop splitting and this subtree is used as the smallest granularity unit. The procedure will be iterated until all the segmentation stops. Finally, we use all the smallest subtrees as indexes to identify templates. 
 
@@ -101,6 +101,6 @@ We propose three novel metrics, i.e., design aesthetics, color harmony, and stru
 
 ![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/T4.jpg)
 
-As shown in Table IV, the generated GUI designs from our model outperforms that of FaceOff significantly with 3.11, 3.30, and 3.21 which are 31.22%, 25.00%, and 34.87% increase in overall aesthetics, color harmony and structure. We also carry out the Mann-Whitney U test on three metrics and the results suggests that our GUIGAN can contribute significantly to the GUI design in all three metrics with p−value < 0.01 or p−value < 0.05 except the aesthetics and color harmony metrics in the shopping category. 
+As shown in Table IV, the generated GUI designs from our model outperforms that of FaceOff significantly in overall aesthetics, color harmony and structure. We also carry out the Mann-Whitney U test on three metrics and the results suggests that our GUIGAN can contribute significantly to the GUI design. 
 
 
