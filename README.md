@@ -105,7 +105,7 @@ We propose three novel metrics, i.e., design aesthetics, color harmony, and stru
 
 As shown in Table IV, the generated GUI designs from our model outperforms that of FaceOff significantly in overall aesthetics, color harmony and structure. We also carry out the Mann-Whitney U test on three metrics and the results suggests that our GUIGAN can contribute significantly to the GUI design. 
 
-### Generating with pre-built GUI Components
+### Examples of pre-built Components
 
 Our model can generate other components to complete a whole GUI design based on the unfinished pre-built components, and the final generated samples are diverse. 
 
