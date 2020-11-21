@@ -65,7 +65,9 @@ The siamese network used for learning GUI design style is basically a two-channe
 
 All networks are implemented on the PyTorch platform and trained on a GPU.
 
-## Automated Evaluation
+## Results
+
+### Automated Evaluation
 
 We try to test our model’s capability in capturing that characteristic by preparing separated dataset for five most frequent app categories in Rico dataset, including News & Magazines, Books & Reference, Shopping, Communication, and Travel & Local. In addition, we prepare three kinds of GUIs from three big companies with most apps in our dataset i.e., Google, Yinzcam, and Raycom as shown in Table 1.
 
@@ -95,7 +97,7 @@ Generated GUI examples by GUIGAN-style (a, b), with harmonious color combination
 
 There are still some bad designs. Some subtrees are difficult to fit into the generated GUIs, and there may be an imbalance between the style and structure information for some GUI generation. 
 
-## HUMAN EVALUATION
+### HUMAN EVALUATION
 
 We propose three novel metrics, i.e., design aesthetics, color harmony, and structure rationality for five participants(with Android development experience about GUI implementation and some GUI design) to rate the quality of the GUI design from three aspects by considering the characteristics of the mobile GUIs. For each metric, the participants will give a score ranging from 1 to 5 with 1 representing the least satisfactoriness while 5 as the highest satisfactoriness. We select 5 app categories (News & Magazines, Books & Reference, Shopping, Communication, and Travel & Local)  for specific GUI generation. For each category, we randomly generate 10 GUI designs for each method. The participants do not know which GUI design is from which method and all of them will evaluate the GUI design individually without any discussion.
 
@@ -103,7 +105,7 @@ We propose three novel metrics, i.e., design aesthetics, color harmony, and stru
 
 As shown in Table IV, the generated GUI designs from our model outperforms that of FaceOff significantly in overall aesthetics, color harmony and structure. We also carry out the Mann-Whitney U test on three metrics and the results suggests that our GUIGAN can contribute significantly to the GUI design. 
 
-## Generating with pre-built GUI Components
+### Generating with pre-built GUI Components
 
 Our model can generate other components to complete a whole GUI design based on the unfinished pre-built components, and the final generated samples are diverse. 
 
