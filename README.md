@@ -107,7 +107,7 @@ As shown in Table IV, the generated GUI designs from our model outperforms that 
 
 ### Examples of pre-built Components
 
-Our model can generate other components to complete a whole GUI design based on the unfinished pre-built components, and the final generated samples are diverse. 
+Our model can generate other components to complete a whole GUI design based on the unfinished pre-built components (the leftmost column), and the final generated samples are diverse. 
 
 ![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/pre1.jpg)
 
