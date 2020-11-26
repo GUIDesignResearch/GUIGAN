@@ -105,9 +105,9 @@ We propose three novel metrics, i.e., design aesthetics, color harmony, and stru
 
 As shown in Table IV, the generated GUI designs from our model outperforms that of FaceOff significantly in overall aesthetics, color harmony and structure. We also carry out the Mann-Whitney U test on three metrics and the results suggests that our GUIGAN can contribute significantly to the GUI design. 
 
-![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Results/User study/Fig_HistFaceoff.jpg)
-![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Results/User study/Fig_HistGUIGAN.jpg)
-![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Results/User study/Fig_HistReal.jpg)
+![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Results/UserStudy/Fig_HistFaceoff.jpg)
+![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Results/UserStudy/Fig_HistGUIGAN.jpg)
+![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Results/UserStudy/Fig_HistReal.jpg)
 
 The 
 
