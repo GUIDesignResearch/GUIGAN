@@ -16,8 +16,8 @@ We cut these candidate subtrees from the original screenshot according to certai
 
 We remove the subtrees with duplicate bounds in one GUI and keep only one in the process. Besides, subtrees with partial overlap and too high or too low aspect ratio are also removed, which can not be cut from the original GUI.
 
-![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/Fig2_cut.jpg)
-<img src="https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/Fig2_cut.jpg" width="350">
+<!-- ![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/Fig2_cut.jpg) --> 
+<img src="https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/Fig2_cut.jpg" width="700">
 
 The figure shows an example segmentation of a real GUI screen shot, and each subtree is used as the basic unit in our work. 
 
@@ -26,8 +26,8 @@ The figure shows an example segmentation of a real GUI screen shot, and each sub
 
 As shown in the figure, based on subtrees automatically segmented from the original GUIs, we first convert all them into embedding by modeling their style. During the training process, the generator randomly generates a sequence with the given length and the discriminator acts as the environment, in which the reward can be calculated as the loss_g by Monte Carlo tree search (MCTS). We get the homogeneity value of the generated result as loss_c. By measuring the distance between the generated result and the original GUI design, the model captures the structural information with loss_s calculated by the minimum edit distance. By integrating all the loss functions above, the parameters of the generator are updated with the backpropagation algorithm.
 
-![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/Fig3.jpg)
-
+<!-- ![Alt text](https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/Fig3.jpg) --> 
+<img src="https://github.com/GUIDesignResearch/GUIGAN/blob/master/Display/Fig3.jpg" width="800">
 
 ### Style Embedding of Subtree
 
