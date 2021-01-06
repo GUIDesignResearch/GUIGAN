@@ -11,7 +11,9 @@ Please read and modify it as you need by yourself.
 
 ### Requirement
 
-‘pip install -r requirements.txt’
+'''
+pip install -r requirements.txt
+'''
 
 ## Style Embedding of Subtree
 
