@@ -11,9 +11,10 @@ Please read and modify it as you need by yourself.
 
 ### Requirement
 
-'''javascript
-pip install -r requirements.txt
-'''
+```
+python3 -m pip install -r requirements.txt
+```
+
 
 ## Style Embedding of Subtree
 
