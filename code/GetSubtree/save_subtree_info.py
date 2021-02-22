@@ -130,7 +130,7 @@ def get_aptedTree(Dom_list,node_tree,id_class_d):
     
     return aTree
 
-def save_subtree_img(_list):
+def save_subtree_img(_list,dst_dir):
     if _list != []:
         for c in _list:
             if get_height(c[2]) >= 1280:
@@ -147,12 +147,12 @@ def save_subtree_img(_list):
             cropedIm.save(save_subtree_dir+'.png',"png")
 
 '''save subtree info in .txt'''
-def save_tree_process(jsns_dir,ui_id,tree_dir,db_app_dir):
+def save_tree_process(jsns_dir,ui_id,tree_dir,db_app_dir,dst_dir):
     cd0  = os.path.join(jsns_dir,ui_id+'.json')
     
     Dom_list,leaf_list,st_bank = get_component_byjson(cd0)
     
-    save_subtree_img(Dom_list)
+    save_subtree_img(Dom_list,dst_dir)
     
     if Dom_list != []:                
         if Dom_list==[]:
@@ -216,7 +216,8 @@ if __name__ == "__main__":
     cd = r'.\P_app_resize_sub' # GUI_dir
     dt = r'.\aTrees_dict_app' # ourput_dir
     db = r'.\st_bank_app' #   # save id_list with blank
-    dsts_dir = r'.\p_app_resize_Td_sts' # save subtree imgs
+    dsts_dir = r'.\p_app_resize_Td_sts' # cut subtree imgs
+    resized_dir = r'.\p_app_resize_Td_sts_c_resized' # resize subtree imgs
     
     for app in os.listdir(cd):
         app_dir = os.path.join(cd,app)
@@ -231,7 +232,7 @@ if __name__ == "__main__":
             img_dir = os.path.join(app_dir,im)
             ui_id = os.path.splitext(im)[0]
             
-            save_tree_process(jsns_dir,ui_id,dt_app_dir,db_app_dir)
+            save_tree_process(jsns_dir,ui_id,dt_app_dir,db_app_dir,dst_dir)
             
             ori_img = os.path.join(os.path.join(app_dir,im),im+'.jpg')
             if os.path.exists(ori_img):
@@ -240,9 +241,8 @@ if __name__ == "__main__":
                 print('no ori_img:', ori_img)
             
     remove_empty_f(dt)
-    remove_empty_f(db)
+    remove_empty_f(db)   
     
-    resized_dir = r'.\p_app_resize_Td_sts_c_resized'
     compressImage(dsts_dir,resized_dir,512,256)
     
     
