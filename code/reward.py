@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Aug 12 14:14:01 2019
-reward
-@author: ztm
-"""
 
 import os
 import random
