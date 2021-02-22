@@ -216,8 +216,8 @@ if __name__ == "__main__":
     cd = r'.\P_app_resize_sub' # GUI_dir
     dt = r'.\aTrees_dict_app' # ourput_dir
     db = r'.\st_bank_app' #   # save id_list with blank
-    dsts_dir = r'.\p_app_resize_Td_sts' # cut subtree imgs
-    resized_dir = r'.\p_app_resize_Td_sts_c_resized' # resize subtree imgs
+    dsts_dir = r'.\p_app_Td_sts' # cut subtree imgs
+    resized_dir = r'.\p_app_Td_sts_resized' # resize subtree imgs
     
     for app in os.listdir(cd):
         app_dir = os.path.join(cd,app)
