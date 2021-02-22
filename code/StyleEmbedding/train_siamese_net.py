@@ -111,7 +111,7 @@ def dirs_to_images_and_labels(batch_dirs, height=128, width=128, channel=3, resi
     return image_pairs
 
 if __name__ == '__main__':   
-    dataset_path = r'.\p_app_resize_Td_sts' # subtree imgs
+    dataset_path = r'.\p_app_Td_sts_resized' # subtree imgs
     input_shape = (256, 512, 3)
     learning_rate = 0.00005
     batch_size = 16
