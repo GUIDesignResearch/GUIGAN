@@ -163,7 +163,7 @@ if __name__ == '__main__':
                     accuracy.append(accu)     
                 for idx, accu in enumerate(accuracy):
                     print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss:{:.6f}\tOut: {}\tAccu: {:.2f}'.format(
-                        e, batch_id * len(y), train_size,
+                        e, batch_id * len(y), 2*train_size,
                         100. * batch_id / steps_per_epoch_train, loss.item(), idx, accu * 100.))
                     
         torch.save(net.state_dict(), 'models_torch/' + 'torch_siamese-' + str(e) + ".pkl")                                
