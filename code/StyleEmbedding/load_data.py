@@ -90,7 +90,7 @@ def read_file(ui_file): # "；" is used to split intra pair and inter pair
 
 #-------------------main start-----------------------------------
 if __name__ == "__main__":
-    cd = r'.\p_app_resize_Td_sts'
+    cd = r'.\p_app_Td_sts'
     ui_dictionary = load_dataset(cd)    
 
 #    # write the selected apps to the file
