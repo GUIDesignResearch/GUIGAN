@@ -91,7 +91,7 @@ def get_soft_all_image_pair(dictionary, available_apps,ui_c=20,s_num=10):
 
 
 if __name__ == "__main__":
-    cd = r'.\p_app_resize_Td_sts'
+    cd = r'.\p_app_Td_sts'
     
     dictionary = load_dataset(cd)
     _file = r'.\data\data.txt'
