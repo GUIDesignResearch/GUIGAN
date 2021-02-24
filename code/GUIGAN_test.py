@@ -62,21 +62,7 @@ pre_built = False
 if __name__ == '__main__':       
     
     random.seed(SEED)
-    
-    file_csv = r'F:\2017\zhu\RicoDataset\app_details.csv'    
-    cd_img = r'D:\zhu\chen1\data\pick8\p_app_resize_Td_sts_c_resize512_noui1'
-    txt_img = r'D:\zhu\chen1\data\pick8\aTrees_dict_app'
-    st_dir = r'D:\zhu\chen1\data\pick8\p_app_resize_Td_sts'
-    db_dir = r'D:\zhu\chen1\data\pick8\st_bank_app'
-    emb_file = r'D:\SpyderWorkSpace\GUI_Ganerator\data\categories_app_emb'
-    
-    _save_path = r'D:\SpyderWorkSpace\GUI_Ganerator\GAN\model'    
-    if pre_built:
-        NEGATIVE_FILE = r'D:\SpyderWorkSpace\GUI_Ganerator\GAN\results_test1' 
-    else:
-        NEGATIVE_FILE = r'D:\SpyderWorkSpace\GUI_Ganerator\GAN\results_test_pre-built'
-        
-    #---------------------------
+
     file_csv = r'app_details.csv'  
     cd_img = r'.\p_app_Td_sts_resized'    
     txt_img = r'.\aTrees_dict_app'  
