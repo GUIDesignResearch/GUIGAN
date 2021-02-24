@@ -196,18 +196,7 @@ bank_dict = {'1':2, '2':6, '3':10, '4':20, '5':35, '6':50, '7':70, '8':100, '9':
 if __name__ == '__main__':
     
     random.seed(SEED)
-    
-    file_csv = r'F:\2017\zhu\RicoDataset\app_details.csv'    
-    cd_img = r'D:\zhu\chen1\data\pick8\p_app_resize_Td_sts_c_resize512_noui1'    
-    txt_img = r'D:\zhu\chen1\data\pick8\aTrees_dict_app'
-    st_dir = r'D:\zhu\chen1\data\pick8\p_app_resize_Td_sts'
-    db_dir = r'D:\zhu\chen1\data\pick8\st_bank_app'
-    emb_file = r'D:\SpyderWorkSpace\GUI_Ganerator\data\categories_app_emb'    
-    
-    m_save_path = r'D:\SpyderWorkSpace\GUI_Ganerator\GAN\model' # 3 loss
-    NEGATIVE_FILE = '.\samples' 
-    
-    #---------------------------
+
     file_csv = r'app_details.csv'  
     cd_img = r'.\p_app_Td_sts_resized'    
     txt_img = r'.\aTrees_dict_app'  
