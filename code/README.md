@@ -29,7 +29,7 @@ use StyleEmbedding.train_siamese_net.py to train the siamese network.
 python train_siamese_net.py
 ```
 
-the trained models can be **[`Download`](https://drive.google.com/file/d/1dfuXksrWNmfO5097s4i3AFTFLGGjREzI/view?usp=sharing)**)
+the trained models: **[`Download`](https://drive.google.com/file/d/1dfuXksrWNmfO5097s4i3AFTFLGGjREzI/view?usp=sharing)**)
 
 
 ## Training GUIGAN to Generate GUI Design
