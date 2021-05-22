@@ -88,6 +88,49 @@ def read_file(ui_file): # "；" is used to split intra pair and inter pair
             _uis.append(linelist)
     return _uis[0][:-1]
 
+def get_s_app(file_csv, cd, app=True):
+    categories = []
+    cv_file = csv.reader(open(file_csv,'r', encoding='UTF-8'))
+    for stu in cv_file:
+        categories.append([stu[0].strip(),stu[2].strip()])
+        
+    categories1 = categories[1:]
+    p5_apps = []
+    for a in os.listdir(cd):
+        app_dir = os.path.join(cd,a)
+        a_ui_num = 0
+        for b in os.listdir(app_dir):
+            a_ui_num += 1
+        p5_apps.append([a.strip(), a_ui_num])
+    
+    categories3 = []
+    for c in categories1:
+        if c[0] in [p[0] for p in p5_apps]:
+            c3 = [d for d in p5_apps if d[0]==c[0]][0]
+            categories3.append([c[0], c[1], c3[1]])    
+    if app:
+        p5_c_l = []
+        p5_c_d = {}
+        for c in categories3:
+            if c[1] not in p5_c_l:
+                p5_c_l.append(c[1])
+                p5_c_d[c[1]] = [c[0]]
+            else:
+                p5_c_d[c[1]] += [c[0]]                
+        return p5_c_l, p5_c_d
+    else:
+        p5_c_l1 = []
+        p5_c_d1 = {}
+        for c in categories3:
+            if c[1] not in p5_c_l1:
+                p5_c_l1.append(c[1])
+                p5_c_d1[c[1]] = int(c[2])
+            else:
+                p5_c_d1[c[1]] += int(c[2])
+                
+        p5_c_ds1 = sorted(p5_c_d1.items(), key = lambda x:x[1])
+        return p5_c_l1, p5_c_ds1
+    
 #-------------------main start-----------------------------------
 if __name__ == "__main__":
     cd = r'.\p_app_Td_sts_resized'
