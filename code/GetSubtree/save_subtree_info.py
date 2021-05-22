@@ -7,6 +7,7 @@
 
 import os,shutil
 import numpy as np
+from PIL import Image
 from get_subtree import get_component_byjson, get_className, get_layerNum, \
 get_width, get_height, get_resized_bounds, compressImage
 
