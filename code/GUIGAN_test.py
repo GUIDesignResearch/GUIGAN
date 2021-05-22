@@ -70,7 +70,7 @@ if __name__ == '__main__':
     db_dir = r'.\st_bank_app'
     emb_file = r'.\data\categories_app_emb'
     
-    m_save_path = r'.\models' # 3 loss    
+    _save_path = r'.\models' # 3 loss    
     if not pre_built:
         NEGATIVE_FILE = r'.\results' 
     else:
