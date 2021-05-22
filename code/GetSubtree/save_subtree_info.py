@@ -8,6 +8,7 @@
 import os,shutil
 import numpy as np
 from PIL import Image
+from PIL import ImageFile
 from get_subtree import get_component_byjson, get_className, get_layerNum, \
 get_width, get_height, get_resized_bounds, compressImage
 
@@ -245,6 +246,7 @@ if __name__ == "__main__":
     remove_empty_f(dt)
     remove_empty_f(db)   
     
+    ImageFile.LOAD_TRUNCATED_IMAGES = True
     compressImage(dsts_dir,resized_dir,512,256)
     
     
