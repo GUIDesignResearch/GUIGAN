@@ -206,7 +206,9 @@ if __name__ == '__main__':
     
     m_save_path = r'.\models' # 3 loss
     NEGATIVE_FILE = '.\samples'     
-    
+    if not os.path.exists(NEGATIVE_FILE):
+        os.mkdir(NEGATIVE_FILE)
+        
     appsl, appsd = get_s_app(file_csv, st_dir)
     appsl1 = []
     for (k,v) in appsd.items():
