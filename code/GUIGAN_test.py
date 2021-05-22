@@ -71,7 +71,7 @@ if __name__ == '__main__':
     emb_file = r'.\data\categories_app_emb'
     
     m_save_path = r'.\models' # 3 loss    
-    if pre_built:
+    if not pre_built:
         NEGATIVE_FILE = r'.\results' 
     else:
         NEGATIVE_FILE = r'.\results_pre' 
@@ -276,7 +276,7 @@ if __name__ == '__main__':
             if pre_built:
                 samples_lenth = generate_samples(generator, BATCH_SIZE, GENERATED_NUM, NEGATIVE_FILE1,
                                               x_info,x_ids,start_id_list,end_id_list,bank_dict,pre_s)
-            else
+            else:
                 samples_lenth = generate_samples(generator, BATCH_SIZE, GENERATED_NUM, NEGATIVE_FILE1,
                                               x_info,x_ids,start_id_list,end_id_list,bank_dict)
             
